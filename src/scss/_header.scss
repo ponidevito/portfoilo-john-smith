@@ -1,0 +1,16 @@
+// ========================= [ Header styles ] =========================
+
+.header {
+  &__body {
+    padding: 15px 0px;
+  }
+
+  &__logo {
+    font-size: 25px;
+    line-height: 132%;
+    color: #272832;
+    @include xs {
+      text-align: center;
+    }
+  }
+}

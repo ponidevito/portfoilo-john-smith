@@ -1,0 +1,75 @@
+.projects {
+  padding-top: 80px;
+  @include lg {
+    padding-top: 60px;
+  }
+
+  @include md {
+    padding-top: 40px;
+  }
+  @include sm {
+    padding-top: 20px;
+  }
+  .container {
+    margin-bottom: 33px;
+  }
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr; /* Центр ширший, боки вужчі */
+    width: 100vw; /* На всю ширину вікна */
+    @include md {
+      grid-template-columns: repeat(1, 1fr); /* Центр ширший, боки вужчі */
+    }
+  }
+
+  &__image {
+    position: relative;
+    overflow: hidden;
+    height: 350px; /* Однакова висота для всіх */
+    @include md {
+      height: 200px;
+    }
+  }
+
+  &__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s ease;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: absolute;
+    left: 19px;
+    bottom: 13px;
+  }
+
+  &__name {
+    font-size: 17px;
+    line-height: 124%;
+    color: #fff;
+  }
+
+  &__position {
+    font-size: 9px;
+    line-height: 111%;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.49);
+  }
+
+  /* Ряди з двома зображеннями */
+  &__row--two {
+    grid-template-columns: repeat(2, 1fr); /* Два рівні елементи */
+  }
+
+  &__row--three {
+    grid-template-columns: repeat(3, 1fr); /* Два рівні елементи */
+  }
+}

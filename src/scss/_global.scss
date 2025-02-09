@@ -1,0 +1,26 @@
+// Container
+
+[class*="container"] {
+  max-width: 960px;
+  margin: 0px auto;
+  padding: 0px 15px;
+  box-sizing: content-box;
+}
+
+.title-h2 {
+  font-size: 31px;
+  line-height: 116%;
+  color: #696969;
+}
+
+// Animations
+// Fade
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

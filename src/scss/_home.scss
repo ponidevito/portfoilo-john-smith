@@ -1,0 +1,94 @@
+.home {
+  &__main {
+    position: relative;
+  }
+
+  &__bg {
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @include sm {
+        min-height: 200px;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(253, 110, 110, 0.4);
+    }
+  }
+  &__main-content {
+    max-width: 960px;
+    padding: 0px 15px;
+    position: absolute;
+    z-index: 2; /* Контент буде поверх фону */
+    top: 50%;
+    left: 50%;
+    color: #fff; /* Білий колір тексту */
+    transform: translate(-50%, -50%);
+    width: 100%;
+    h1 {
+      font-size: clamp(20px, 5vw, 48px); /* Плавна зміна розміру */
+      line-height: 92%;
+      color: #fff;
+    }
+  }
+
+  &__main-actions {
+    margin-top: 43px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    .home__main-btn {
+      font-size: 17px;
+      line-height: 118%;
+      text-transform: capitalize;
+      text-align: center;
+      color: #fff;
+      padding: 17px 28px;
+      border: 2px solid #fff;
+      position: relative;
+      transition: 0.3s ease;
+      @include md {
+        padding: 10px;
+        font-size: 16px;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0;
+        background-color: #f7f7f742;
+        left: 0;
+        top: 0;
+        transition: width 0.3s ease;
+      }
+      &:hover::after {
+        width: 100%;
+      }
+    }
+    @include md {
+      margin-top: 20px;
+    }
+    @include xs {
+      justify-content: center;
+    }
+  }
+  .swiper {
+    .swiper-pagination-bullet {
+      background: rgba(255, 255, 255);
+      width: 7px;
+      height: 7px;
+      border-radius: unset;
+      &.swiper-pagination-bullet-active {
+        background: #fff;
+      }
+    }
+  }
+}
